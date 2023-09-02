@@ -15,11 +15,20 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             
-            Button("Our MOOC") {
-           
+            Button(action: {
+                self.theMOOC.toggle()
+            }) {
+                Text("Our MOOC")
             }
             if theMOOC {
-                Text("Welcome to the MOOC")
+                VStack {
+                    Image("ImageForDemo_Lesson1")
+                        .resizable()
+                        .scaledToFit()
+                    Text("Welcome to the MOOC")
+                        .font(.largeTitle)
+            }
+                
             }
             
         }
